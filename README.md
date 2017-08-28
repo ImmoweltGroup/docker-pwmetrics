@@ -18,7 +18,7 @@ docker run -v $(pwd)/path/to/config/:/usr/pwmetrics-config pwmetrics:3.1.1 http:
 
 This will...
 
-* ... mount a volume from the host (`node_modules/@immowelt/util-pwmetrics`) into the container (`usr/pwmetrics-config`).
+* ... mount a volume from the host (`$(pwd)/path/to/config/`) into the container (`usr/pwmetrics-config`).
 * ... uses the pulled `pwmetrics` image as a base.
 * ... executes the `pwmetrics` CLI internally with the provided target URL and config file.
 

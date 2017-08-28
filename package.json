@@ -1,0 +1,28 @@
+{
+  "name": "@immowelt/pwmetrics",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Immonet dev team <aegaeon@immonet.de> (https://immonet.de)",
+  "license": "MIT",
+  "description": "A Docker image for the pwmetrics CLI which should be used to test your application on behalf of performance guidelines from Google.",
+  "main": "build-images.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint build-images.js"
+  },
+  "engines": {
+    "node": ">=8.3.0",
+    "npm": ">=5.3.0"
+  },
+  "keywords": [],
+  "dependencies": {
+    "async-exec": "^1.1.0",
+    "log-fancy": "^1.1.2",
+    "node-fetch": "^1.7.2",
+    "semver": "^5.4.1"
+  },
+  "devDependencies": {
+    "@immowelt/eslint-config-immowelt-react": "^1.0.1",
+    "eslint": "^4.4.1"
+  }
+}
