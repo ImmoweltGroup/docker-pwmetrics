@@ -11,9 +11,11 @@ Execute the following commands in your pipeline to do so.
 
 ```shell
 # First pull the required version of the docker image on your host, only needs to be done once.
+# View the list of available tags at https://hub.docker.com/r/immowelt/pwmetrics/tags/
 docker pull immowelt/pwmetrics:3.1.1
 
-# Execute the tests based on a config located at `$(pwd)/path/to/config/pwmetrics.config.js`, the `$(pwd)` is only supported in unix environments.
+# Launch a test on http://domain-to-test.com/ with the config located at `$(pwd)/path/to/config/pwmetrics.config.js`.
+# Note: The `$(pwd)` annotation is only supported in unix environments.
 docker run -v $(pwd)/path/to/config/:/usr/pwmetrics-config immowelt/pwmetrics:3.1.1 http://domain-to-test.com/ --config=/usr/pwmetrics-config/pwmetrics.config.js
 ```
 
