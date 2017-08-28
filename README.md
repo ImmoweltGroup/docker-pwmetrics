@@ -1,4 +1,4 @@
-# pwmetrics
+# @immowelt/pwmetrics
 
 [![Powered by Immowelt](https://img.shields.io/badge/powered%20by-immowelt-yellow.svg?colorB=ffb200)](https://stackshare.io/immowelt-group/)
 [![Build Status](https://travis-ci.org/ImmoweltGroup/pwmetrics.svg?branch=master)](https://travis-ci.org/ImmoweltGroup/pwmetrics)
@@ -11,17 +11,11 @@ Execute the following commands in your pipeline to do so.
 
 ```shell
 # First pull the required version of the docker image on your host, only needs to be done once.
-docker pull pwmetrics:3.1.1
+docker pull immowelt/pwmetrics:3.1.1
 
-# Execute the tests based on a config, the `$(pwd)` is only supported in unix environments.
-docker run -v $(pwd)/path/to/config/:/usr/pwmetrics-config pwmetrics:3.1.1 http://domain-to-test.com/ --config=/usr/pwmetrics-config/pwmetrics.config.js
+# Execute the tests based on a config located at `$(pwd)/path/to/config/pwmetrics.config.js`, the `$(pwd)` is only supported in unix environments.
+docker run -v $(pwd)/path/to/config/:/usr/pwmetrics-config immowelt/pwmetrics:3.1.1 http://domain-to-test.com/ --config=/usr/pwmetrics-config/pwmetrics.config.js
 ```
-
-This will...
-
-* ... mount a volume from the host (`$(pwd)/path/to/config/`) into the container (`usr/pwmetrics-config`).
-* ... uses the pulled `pwmetrics` image as a base.
-* ... executes the `pwmetrics` CLI internally with the provided target URL and config file.
 
 ## Configuration and preset-rules
 
