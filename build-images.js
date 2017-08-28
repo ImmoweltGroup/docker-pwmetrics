@@ -14,11 +14,12 @@ async function buildAndPush(version) {
 	const dockerImageTag = `pwmetrics:${version}`;
 
 	logger.info(`Building ${dockerImageTag}...`);
-	await exec(`docker build --pull --no-cache --build-arg PWMETRICS_VERSION=${version} -t ${dockerImageTag} .`, true);
-
+	await exec(`docker build --pull --no-cache --build-arg PWMETRICS_VERSION=${version} -t ${dockerImageTag} .`);
 	logger.success(`Successfuly built ${dockerImageTag}!`);
-	// Disable the push until we setup the login to hub.docker.com
-	// await exec(`docker push ${dockerImageTag}`, true);
+
+	logger.info(`Pushing ${dockerImageTag} to hub.docker.com...`);
+	await exec(`docker push ${dockerImageTag}`, true);
+	logger.success(`Successfuly pushed ${dockerImageTag} to hub.docker.com!`);
 }
 
 (async function () {
