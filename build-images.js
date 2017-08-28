@@ -11,7 +11,7 @@ const semver = require('semver');
 const exec = require('async-exec').default;
 
 async function buildAndPush(version) {
-	const dockerImageTag = `pwmetrics:${version}`;
+	const dockerImageTag = `immowelt/pwmetrics:${version}`;
 
 	logger.info(`Building ${dockerImageTag}...`);
 
