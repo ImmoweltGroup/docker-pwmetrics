@@ -1,0 +1,12 @@
+sudo: required
+language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+services:
+  - docker
+after_success:
+  - echo "Build docker images as soon as the account link to hub.docker is done."
+  # - node build-images.js
