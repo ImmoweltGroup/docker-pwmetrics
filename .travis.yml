@@ -7,6 +7,7 @@ notifications:
   email: false
 services:
   - docker
+before_script:
+  - docker login -e $IMMO_DOCKER_EMAIL -u $IMMO_DOCKER_USER -p $IMMO_DOCKER_PASS
 after_success:
-  - echo "Build docker images as soon as the account link to hub.docker is done."
-  # - node build-images.js
+  - node build-images.js

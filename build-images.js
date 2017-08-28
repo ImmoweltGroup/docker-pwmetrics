@@ -23,7 +23,7 @@ async function buildAndPush(version) {
 	});
 
 	logger.success(`Successfuly built ${dockerImageTag}!`);
-	await exec(`docker push ${dockerImageTag}`, true);
+	// await exec(`docker push ${dockerImageTag}`, true);
 }
 
 (async function () {
