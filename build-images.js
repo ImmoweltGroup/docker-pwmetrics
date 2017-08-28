@@ -23,6 +23,8 @@ async function buildAndPush(version) {
 	});
 
 	logger.success(`Successfuly built ${dockerImageTag}!`);
+	console.log(exec);
+	// Disable the push until we setup the login to hub.docker.com
 	// await exec(`docker push ${dockerImageTag}`, true);
 }
 
