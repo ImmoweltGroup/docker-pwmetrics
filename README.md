@@ -32,7 +32,7 @@ The `ttfcp`, or commonly known as FCP, describes the time it takes until the bro
 It was introduced since it is the moment that the user starts scanning the page for content.
 
 A visualized example of the two is shown below.
-![Image that explains the difference between ttfmp and ttfcp](https://raw.githubusercontent.com/WICG/paint-timing/master/filmstrip.png)
+![Image that explains the difference between ttfmp and ttfcp](https://user-images.githubusercontent.com/1557092/29769201-93fd399a-8be9-11e7-9cb2-db0199aa5002.png)
 
 More information can be found [here](https://github.com/WICG/paint-timing#definition).
 
