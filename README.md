@@ -1,7 +1,7 @@
-# @immowelt/pwmetrics
+# @immowelt/docker-pwmetrics
 
 [![Powered by Immowelt](https://img.shields.io/badge/powered%20by-immowelt-yellow.svg?colorB=ffb200)](https://stackshare.io/immowelt-group/)
-[![Build Status](https://travis-ci.org/ImmoweltGroup/pwmetrics.svg?branch=master)](https://travis-ci.org/ImmoweltGroup/pwmetrics)
+[![Build Status](https://travis-ci.org/ImmoweltGroup/docker-pwmetrics.svg?branch=master)](https://travis-ci.org/ImmoweltGroup/docker-pwmetrics)
 
 > A Docker image for the [pwmetrics CLI](https://github.com/paulirish/pwmetrics) which should be used to test your application on behalf of performance guidelines from Google.
 

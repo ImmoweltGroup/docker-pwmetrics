@@ -1,5 +1,5 @@
 {
-  "name": "@immowelt/pwmetrics",
+  "name": "@immowelt/docker-pwmetrics",
   "version": "0.1.0",
   "private": true,
   "author": "Immonet dev team <aegaeon@immonet.de> (https://immonet.de)",
