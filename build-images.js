@@ -14,7 +14,14 @@ async function buildAndPush(version) {
 	const dockerImageTag = `pwmetrics:${version}`;
 
 	logger.info(`Building ${dockerImageTag}...`);
-	await exec(`docker build --pull --no-cache --build-arg PWMETRICS_VERSION=${version} -t ${dockerImageTag} .`);
+
+	try {
+		await exec(`docker build --pull --no-cache --build-arg PWMETRICS_VERSION=${version} -t ${dockerImageTag} .`);
+	} catch (e) {
+		logger.warn(`Building ${dockerImageTag} failed, continuing to the next published version.`);
+		return;
+	}
+
 	logger.success(`Successfuly built ${dockerImageTag}!`);
 
 	logger.info(`Pushing ${dockerImageTag} to hub.docker.com...`);
