@@ -8,7 +8,6 @@ notifications:
 services:
   - docker
 before_script:
-  - echo "login to hub.docker.com"
-  # - docker login -e $IMMO_DOCKER_EMAIL -u $IMMO_DOCKER_USER -p $IMMO_DOCKER_PASS
+  - docker login -e $IMMO_DOCKER_EMAIL -u $IMMO_DOCKER_USER -p $IMMO_DOCKER_PASS
 after_success:
-  - node build-images.js
+  - DEBUG=* node build-images.js

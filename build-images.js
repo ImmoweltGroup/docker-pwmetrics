@@ -8,22 +8,15 @@
 const logger = require('log-fancy')('@immowelt/pwmetrics');
 const fetch = require('node-fetch');
 const semver = require('semver');
-const asyncExec = require('async-exec');
-const exec = asyncExec.default;
-const {execWithCallbackOnLine} = asyncExec;
+const exec = require('async-exec').default;
 
 async function buildAndPush(version) {
 	const dockerImageTag = `pwmetrics:${version}`;
 
 	logger.info(`Building ${dockerImageTag}...`);
-	await execWithCallbackOnLine(`docker build --pull --no-cache --build-arg PWMETRICS_VERSION=${version} -t ${dockerImageTag} .`, output => {
-		if (output.includes('+ pwmetrics@')) {
-			logger.log(output);
-		}
-	});
+	await exec(`docker build --pull --no-cache --build-arg PWMETRICS_VERSION=${version} -t ${dockerImageTag} .`, true);
 
 	logger.success(`Successfuly built ${dockerImageTag}!`);
-	console.log(exec);
 	// Disable the push until we setup the login to hub.docker.com
 	// await exec(`docker push ${dockerImageTag}`, true);
 }
