@@ -39,5 +39,9 @@ This number scale is based on the principle „The-lower-the-better“, Google e
 
 [https://developers.google.com/web/tools/lighthouse/audits/speed-index](https://developers.google.com/web/tools/lighthouse/audits/speed-index)
 
+## Contributing
+Please make sure that you adhere to our code style, you can validate your changes / PR by executing `npm run lint`.
+Visit the [eslint-config-immowelt-react](https://github.com/ImmoweltHH/eslint-config-immowelt-react) package for more information.
+
 ## Licensing
 See the LICENSE file at the root of the repository.
