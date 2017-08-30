@@ -1,13 +1,18 @@
 sudo: required
 language: node_js
-cache:
-  directories:
-    - node_modules
+osx_image: xcode9
 notifications:
   email: false
 services:
   - docker
+before_install:
+  - brew update
+install:
+  - brew install hadolint
+  - npm i -g @immowelt/docker-publish
+script:
+  - hadolint Dockerfile
 before_script:
   - docker login -e $IMMO_DOCKER_EMAIL -u $IMMO_DOCKER_USER -p $IMMO_DOCKER_PASS
 after_success:
-  - DEBUG=* node build-images.js
+  - docker-publish --tags=https://api.github.com/repos/paulirish/pwmetrics/tags --image=immowelt/pwmetrics --arg=PWMETRICS_VERSION
