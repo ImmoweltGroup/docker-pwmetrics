@@ -1,4 +1,4 @@
-FROM markadams/chromium-xvfb-js:latest
+FROM markadams/chromium-xvfb-js:8
 MAINTAINER Immonet dev team "aegaeon@immonet.de"
 
 #
