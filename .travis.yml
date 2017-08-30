@@ -4,8 +4,6 @@ notifications:
   email: false
 services:
   - docker
-before_install:
-  - brew update
 install:
   - docker pull lukasmartinelli/hadolint
   - npm i -g @immowelt/docker-publish
