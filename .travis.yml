@@ -1,7 +1,5 @@
 sudo: required
 language: node_js
-os:
-  - osx
 notifications:
   email: false
 services:
@@ -9,11 +7,11 @@ services:
 before_install:
   - brew update
 install:
-  - brew install hadolint
+  - docker pull lukasmartinelli/hadolint
   - npm i -g @immowelt/docker-publish
-script:
-  - hadolint Dockerfile
 before_script:
   - docker login -e $IMMO_DOCKER_EMAIL -u $IMMO_DOCKER_USER -p $IMMO_DOCKER_PASS
+script:
+  - docker run --rm -i lukasmartinelli/hadolint < Dockerfile
 after_success:
   - docker-publish --tags=https://api.github.com/repos/paulirish/pwmetrics/tags --image=immowelt/pwmetrics --arg=PWMETRICS_VERSION
