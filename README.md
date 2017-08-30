@@ -5,7 +5,7 @@
 
 > A Docker image for the [pwmetrics CLI](https://github.com/paulirish/pwmetrics) which should be used to test your application on behalf of performance guidelines from Google.
 
-## Getting started (using Docker)
+## Getting started
 In case you want to integrate a performance test in your CI pipeline, we have an already pre configured Docker image at your hands.
 Execute the following commands in your pipeline to do so.
 
@@ -38,10 +38,6 @@ The `psi` is a threshold which was introduced as a rating for your website in re
 This number scale is based on the principle „The-lower-the-better“, Google employee Paul Irish recommends a PSI of under `1000`, but this is hard to achieve for bigger websites, the average score for the top 50 E-Commerce sites in the UK is between `3000` and `8500`, so we set our maximum PSI as the median of this range of `5000`.
 
 [https://developers.google.com/web/tools/lighthouse/audits/speed-index](https://developers.google.com/web/tools/lighthouse/audits/speed-index)
-
-## Contributing
-Please make sure that you adhere to our code style, you can validate your changes / PR by executing `npm run lint`.
-Visit the [eslint-config-immowelt-react](https://github.com/ImmoweltHH/eslint-config-immowelt-react) package for more information.
 
 ## Licensing
 See the LICENSE file at the root of the repository.
