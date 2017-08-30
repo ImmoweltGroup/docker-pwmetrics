@@ -12,5 +12,5 @@ install:
 script:
   - docker run --rm -i lukasmartinelli/hadolint < Dockerfile
 after_success:
-  - docker login -e $IMMO_DOCKER_EMAIL -u $IMMO_DOCKER_USER -p $IMMO_DOCKER_PASS
+  - docker login -u=$IMMO_DOCKER_USER -p=$IMMO_DOCKER_PASS
   - DEBUG=@immowelt* docker-publish --tags=https://api.github.com/repos/paulirish/pwmetrics/tags --image=immowelt/pwmetrics --arg=PWMETRICS_VERSION
