@@ -2,6 +2,12 @@ FROM markadams/chromium-xvfb-js:8
 MAINTAINER Immonet dev team "aegaeon@immonet.de"
 
 #
+# Define a production env to avoid installing devDeps
+#
+ARG NODE_ENV=production
+ARG BABEL_ENV=production
+
+#
 # Install the Progressive Web Metrics CLI globally.
 #
 ARG PWMETRICS_VERSION="latest"
