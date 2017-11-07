@@ -1,5 +1,5 @@
 FROM markadams/chromium-xvfb-js:8
-MAINTAINER Immonet dev team "aegaeon@immonet.de"
+LABEL maintainer="Immonet dev team <aegaeon@immonet.de>"
 
 #
 # Define a production env to avoid installing devDeps
